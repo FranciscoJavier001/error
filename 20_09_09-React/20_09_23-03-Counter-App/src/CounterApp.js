@@ -1,24 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CounterApp = ({frase1, frase2}) => {
+const CounterApp = ({value}) => {
 
     return (
         <>
-        <h1>{frase1}</h1>
-            <h2>{frase2}</h2>
+        <h1>CounterApp</h1>
+        <h2>{value}</h2>
         </>
     );
 }
 
 CounterApp.propTypes = {
-    frase1: PropTypes.number.isRequired,
-    frase2: PropTypes.string.isRequired,
-}
-
-CounterApp.defaultProps = {
-    frase1: '',
-    frase2: ''
+    value: PropTypes.number.isRequired,
 }
 
 export default CounterApp;

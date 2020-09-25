@@ -7,4 +7,4 @@ import './index.css'
 
 const divRoot = document.querySelector('#app');
 
-ReactDOM.render(<CounterApp frase1={123} frase2="Prueba" />, divRoot);
+ReactDOM.render(<CounterApp value={10} />, divRoot);
