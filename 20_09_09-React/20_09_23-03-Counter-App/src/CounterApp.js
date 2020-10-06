@@ -14,7 +14,7 @@ const CounterApp = ({value = 10}) => {
 
     const handleAppReset=(e)=>{
         // setCounter(counter + 1)
-        setCounter((c)=> c=0);
+        setCounter(value);
     }
 
     const handleAppMin=(e)=>{
