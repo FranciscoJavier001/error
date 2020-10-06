@@ -21,7 +21,7 @@ exports[`Pruebas en <CounterApp /> should debe de mostrar <CounterApp /> correct
   <button
     onClick={[Function]}
   >
-    +-1
+    -1
   </button>
 </Fragment>
 `;
