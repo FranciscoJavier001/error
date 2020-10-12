@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 
-export const AddCategory = () => {
+export const AddCategory = ({setcategories}) => {
 
-    const [inputValue, setInputValue] = useState('Hola Mundo') /** Estas son las dos funciones que tiene el inputvalue  */
+    const [inputValue, setInputValue] = useState('') /** Estas son las dos funciones que tiene el inputvalue  */
 
     const handleInputChange = (e) => { 
         setInputValue(e.target.value) /** Esto me permite cambiar el texto */
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { /** Aqui hacemos la peticion para que salga en el DOM  */
         e.preventDefault(); /** Esto evita el refresh de la pagina */
-        console.log('Submit hecho');
+
+        if(inputValue.trim().length > 2){
+            setcategories(cats => [...cats, inputValue]);
+            setInputValue('');
+        }
     }
 
     return ( /** Aqui directamente ya estamos en el DOM */
@@ -25,4 +30,8 @@ export const AddCategory = () => {
             </form>
 
     )
+}
+
+AddCategory.prototype = { /** Para que utilicen nuestro componente con el pequeño candado con los argumentos que estoy esperando  */
+    setcategories: PropTypes.func.isRequired
 }
