@@ -14,7 +14,7 @@ export const GifGrid = ({ category }) => {
         const resp = await fetch(url);
         const { data } = await resp.json();
 
-        const gifs = data.map(img => {
+        const gifs = data.map(img => { /** Nos envia el arreglo con los parametros solicitdos */
             return {
                 id: img.id,
                 title: img.title,
