@@ -13,7 +13,7 @@ export const AddCategory = ({setcategories}) => {
         e.preventDefault(); /** Esto evita el refresh de la pagina */
 
         if(inputValue.trim().length > 2){
-            setcategories(cats => [...cats, inputValue]);
+            setcategories(cats => [inputValue, ...cats,]);
             setInputValue('');
         }
     }
