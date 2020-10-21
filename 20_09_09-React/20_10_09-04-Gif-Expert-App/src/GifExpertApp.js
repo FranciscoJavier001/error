@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { AddCategory } from './components/AddCategory'
 import { GifGrid } from './components/GifGrid'
 
-export const GifExpertApp = () => {
+export const GifExpertApp = ({defaultCategories = []}) => {
 
-    const [categories, setcategories] = useState(['One Punch'])
+    // const [categories, setcategories] = useState(['One Punch'])
+    const [categories, setcategories] = useState(defaultCategories)
 
     //     setcategories(cats => [...cats, 'HunterXHunter']); /** El UseState me dio la habilidad de hacerlo directamente con el setcategories */
 

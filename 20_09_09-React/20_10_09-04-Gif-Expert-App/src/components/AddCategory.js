@@ -11,9 +11,6 @@ export const AddCategory = ({setCategories}) => {
 
     const handleSubmit = (e) => { /** Aqui hacemos la peticion para que salga en el DOM  */
         e.preventDefault(); /** Esto evita el refresh de la pagina */
-
-        console.log('handleSubmit', inputValue);
-
         if(inputValue.trim().length > 2){ /** Aqui nos dice que solo hace busquedas cuando tenga mas de 2 caracteres */
             setCategories(cats => [inputValue, ...cats,]);
             setInputValue('');
