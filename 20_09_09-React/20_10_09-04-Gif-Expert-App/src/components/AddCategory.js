@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
-export const AddCategory = ({setcategories}) => {
+export const AddCategory = ({setCategories}) => {
 
     const [inputValue, setInputValue] = useState('') /** Estas son las dos funciones que tiene el inputvalue  */
 
@@ -12,8 +12,10 @@ export const AddCategory = ({setcategories}) => {
     const handleSubmit = (e) => { /** Aqui hacemos la peticion para que salga en el DOM  */
         e.preventDefault(); /** Esto evita el refresh de la pagina */
 
-        if(inputValue.trim().length > 2){
-            setcategories(cats => [inputValue, ...cats,]);
+        console.log('handleSubmit', inputValue);
+
+        if(inputValue.trim().length > 2){ /** Aqui nos dice que solo hace busquedas cuando tenga mas de 2 caracteres */
+            setCategories(cats => [inputValue, ...cats,]);
             setInputValue('');
         }
     }
@@ -29,10 +31,9 @@ export const AddCategory = ({setcategories}) => {
                 onChange={handleInputChange} /** Aqui le doy el valor para cambiarlo */
                 />
             </form>
-
     )
 }
 
 AddCategory.prototype = { /** Para que utilicen nuestro componente con el pequeño candado con los argumentos que estoy esperando  */
-    setcategories: PropTypes.func.isRequired
+    setCategories: PropTypes.func.isRequired
 }
