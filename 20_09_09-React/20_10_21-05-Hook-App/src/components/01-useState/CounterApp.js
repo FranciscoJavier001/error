@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Counter.css';
+import './counter.css';
 
 export const CounterApp = () => {
 
@@ -10,7 +10,7 @@ export const CounterApp = () => {
         counter4: 40,
     });
 
-    const { counter1, counter2} = state /** ASi los extraemos */
+    const { counter1, counter2} = state /** Asi los extraemos */
 
     // console.log(counter);
     return (
