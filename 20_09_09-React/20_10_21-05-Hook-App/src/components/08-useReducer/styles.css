@@ -17,6 +17,7 @@ p {
     justify-content: space-between;
 }
 
-.complete {
+/* Si esta esta en true, entonces ponle una linea que pase por enmedio y retorna la clase complete */
+.complete { 
     text-decoration: line-through;
 }

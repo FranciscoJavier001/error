@@ -1,3 +1,5 @@
+//******************************/
+// Imporaciones que se pueden mandar llamar desde aqui
 import React, { useReducer, useEffect } from 'react';
 import { todoReducer } from './todoReducer';
 
@@ -5,32 +7,33 @@ import { TodoList } from './TodoList';
 import { TodoAdd } from './TodoAdd';
 import './styles.css';
 
-//** Cuando se recarga este componente se vuelve a iniciar esta funcion del init la cual lee el localstorage y me ayuda a establecer el estado inicial del reducer */
+//** Funcion de flecha que no recibe parametros, pero si las instrucciones que vienen despues, que establece el nuevo estado de los todos en el todoReducer */
 const init = () => {
-    return JSON.parse(localStorage.getItem('todos')) || []; //** Esto permite que se lean los todos, y se recupera con el JSON.parse y este se va a regresar como un arreglo o si no hay nada se regresa un arreglo vacio que ese es el inicial, y si esta null entonces retorna un arreflo vacio */
+    return JSON.parse(localStorage.getItem('todos')) || []; //** Analiza un objeto, y lo transforma en el estado actual, se puso arriba porque es una funcion que se usa en el useEffect (que esta quiere decir "haz el cambio"), que ya se definio abajo y si esta null no regresa nada (pero creo que eso es mas para evitar conflictos) */
 }
 
-// Esto se importa desde todoReducer.js, estas son las acciones que viene en el Case
+// Esto se importa desde todoReducer, estas son las acciones que viene en el Case
 export const TodoApp = () => {
 
-    const [ todos, dispatch ] = useReducer(todoReducer, [], init); /** Aqui sabe a que reducer hay que mandarle la informacion y cuando cambia el State va a redibujar lo que cambie, entonces al Dispatch hay que mandarle la accion y es el segundo argumento */
-    // Init va a computar el estado inicial para que esta funcion no se este ejecutando y ejecutando cada vez que hay cambios, esta es una funcion comun y corriente y va a regresar el arreglo vacio, y lo que sea que retorne es lo que va a mostrar el initialState
-    
-    // Va a disparar un callback y la dependencia que va a tener van a ser los Todos, si los Todos cambian eso significa que vamos a volver a guardar en el localStorage y eso es lo que hace el useEffect 
+    const [ todos, dispatch ] = useReducer(todoReducer, [], init); //** El useReducer, maneja el todoReducer que aqui lo importamos, maneja un arreglo con el state actual, y que tiene como estado inicial el init, y los todos que son las acciones actuales y el dispatch, que son las acciones que se generan y se actualizan en el localStorage */
+
+    // Va a disparar un callback (que es una funcion que recibe como argumento otra funcion y la ejecuta), si los todos cambian eso significa que vamos a volver a ejecutar la funcion del localStorage y eso es lo que hace el useEffect 
     useEffect( ()=> {
-        localStorage.setItem('todos', JSON.stringify( todos ) ); /** Asi se guarda en el localStorage - Este va a guadar en el LocalStorage cualquier cambio que pase en los todos de la constante de arriba */ 
-    }, [todos]);
+        localStorage.setItem('todos', JSON.stringify( todos ) ); /** Este va a guadar en el LocalStorage cualquier cambio que pase en los todos de la constante de abajo */ 
+    }, [todos]); //** Como los todos cambiaron, entonces se actualizan y vuelve a iniciar la instruccion */
 
-    // EStas son las acciones que viene en el case
+    
+    //** Estas son funciones constantes que van a recibir un objeto con sus argumentos y puede generar las siguientes acciones que van a ser guardadas en el todoId */
     const handleDelete = ( todoId ) => {
-        const action = {
-            type: 'delete',
-            payload: todoId /** Esta es el nuevo estado despues de lo que se hace */
+        const action = { //** action se declara aqui, pero se va a acceder a ella desde el todoReducer en el switch, y si algo cambio en automatico se va a ver reflejado, porque esta comparado con el action.payload que se guarda el cambio en el todoId
+            type: 'delete', 
+            payload: todoId 
         }
-        dispatch( action ); /** Aqui mandamos la nueva accion */
+        dispatch( action ); /** Aqui mandamos la nueva accion que se hizo arriba pero ya guardada y lanzada pero ahora como el init nuevo! */
     }
+    //******************************/
 
-    const handleToggle = ( todoId ) =>{
+    const handleToggle = ( todoId ) =>{ //** Recibe el todoId que es donde quiero hacer el cambio  */
         dispatch({
             type: 'toggle',
             payload: todoId
@@ -50,12 +53,15 @@ export const TodoApp = () => {
             <h1>TodoApp ( { todos.length } ) </h1> 
             <hr />
 
-            <div className="row">
+            {/* Estas con las clases de bootstrap */}
+            <div className="row"> 
                 <div className="col-7">
+
+                    {/* Aqui es donde estamos a la espera de que sea clickeado cualquier boton y si  */}
                     <TodoList 
                         todos={ todos }
-                        handleDelete={ handleDelete }
-                        handleToggle={ handleToggle }
+                        handleDelete={ handleDelete }  //** Aqui esta guardada la nueva accion, en caso que haga el delete */
+                        handleToggle={ handleToggle } //** Se dispara cuando alguien toca con el cursor el parrafo  */
                     />
                 </div>
 
