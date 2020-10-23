@@ -1,5 +1,7 @@
-//******************************/
+//******************************/ dispatch signific envio
 // Imporaciones que se pueden mandar llamar desde aqui
+
+
 import React, { useReducer, useEffect } from 'react';
 import { todoReducer } from './todoReducer';
 
@@ -39,8 +41,9 @@ export const TodoApp = () => {
         });
     }
 //******************************/
-    const handleAddTodo = ( newTodo ) => {
-        dispatch({
+// crear nueva funcion que se llame handleAddTodo que sea una funcion de flecha que va a recibir un nuevo todo que deberia ser un objeto 
+    const handleAddTodo = ( newTodo ) => { 
+        dispatch({ //** Este es el objeto que crea el action  */
             type: 'add',
             payload: newTodo
         });
@@ -57,10 +60,10 @@ export const TodoApp = () => {
                 <div className="col-7">
 
                     {/* Aqui es donde estamos a la espera de que sea clickeado cualquier boton y si  */}
-                    <TodoList 
-                        todos={ todos }
-                        handleDelete={ handleDelete }  //** Aqui esta guardada la nueva accion, en caso que haga el delete */
-                        handleToggle={ handleToggle } //** Se dispara cuando alguien toca con el cursor el parrafo  */
+                    <TodoList //** Este es el nombre del componente (Asi se declaran los componentes y los componentes se pueden exportar con la palabra export y se pueden importr con la palabra import ) */
+                        todos={ todos } //** Estas son las referencias, pero para que? */
+                        handleDelete={ handleDelete }  //** Estas son las referencias */
+                        handleToggle={ handleToggle } //** Estas son las referencias  */
                     />
                 </div>
 
