@@ -4,12 +4,14 @@ body {
     padding: 50px;
 }
 
+/* Este es el numero de la lista y la tarea */
 p {
     cursor: pointer;
     margin: 0px;
 }
 
-.list-group-item {
+/* Aqui es donde se muestra la lista de tareas, pero esto es el boton */
+.list-group-item { 
     align-items: center;
     display: flex;
     justify-content: space-between;
