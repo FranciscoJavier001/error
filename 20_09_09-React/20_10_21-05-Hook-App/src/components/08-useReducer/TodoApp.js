@@ -31,15 +31,14 @@ export const TodoApp = () => {
         }
         dispatch( action ); /** Aqui mandamos la nueva accion que se hizo arriba pero ya guardada y lanzada pero ahora como el init nuevo! */
     }
-    //******************************/
 
-    const handleToggle = ( todoId ) =>{ //** Recibe el todoId que es donde quiero hacer el cambio  */
+    const handleToggle = ( todoId ) =>{ //** Recibe el todoId que es donde quiero hacer el cambio y ponerle la linea*/
         dispatch({
             type: 'toggle',
             payload: todoId
         });
     }
-
+//******************************/
     const handleAddTodo = ( newTodo ) => {
         dispatch({
             type: 'add',
@@ -50,8 +49,8 @@ export const TodoApp = () => {
     // Aqui retornamos el numero de arrelos del Todo
     return ( 
         <div>
-            <h1>TodoApp ( { todos.length } ) </h1> 
-            <hr />
+            <h1>TodoApp ( { todos.length } ) </h1>  {/* Aqui es el length que esta en el titulo que cabia segun los todos que tenga inscritos */}
+            <hr /> {/* Linea */}
 
             {/* Estas con las clases de bootstrap */}
             <div className="row"> 

@@ -19,10 +19,8 @@ export const TodoAdd = ({ handleAddTodo }) => {
             desc: description,
             done: false
         };
-        
         handleAddTodo( newTodo );
         reset();
-        
     }
 
 
@@ -49,10 +47,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 >
                     Agregar
                 </button>
-
-
-            </form>
-            
+            </form>           
         </>
     )
 }
