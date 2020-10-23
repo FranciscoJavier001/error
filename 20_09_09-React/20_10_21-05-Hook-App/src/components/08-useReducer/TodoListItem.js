@@ -1,15 +1,15 @@
 import React from 'react';
 
-export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
-
+// Estas son las propTypes que tiene que recibir
+export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => { 
 
     return (
         <li
-            key={ todo.id }
-            className="list-group-item"
+            key={ todo.id } //** Aqui creamos el key que va a ser el todo.id, que importamos en el TodoList */
+            className="list-group-item" //** Clase de bootstrap que hace una lista de grupal */
         >  
             <p 
-                className={ `${ todo.done && 'complete' }` }
+                className={ `${ todo.done && 'complete' }` } //** Aqui hicimos la desestructuracion de archivos, que nos manda la clase del css, donde pusimos si el todo.done &&  */
                 onClick={ () => handleToggle( todo.id ) }
             > 
                 { index + 1}. { todo.desc }   

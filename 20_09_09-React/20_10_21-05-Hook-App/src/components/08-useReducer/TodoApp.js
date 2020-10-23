@@ -68,9 +68,10 @@ export const TodoApp = () => {
                 </div>
 
                 {/* Aqui es donde se muestra lo que se va a agregar, es el input y el boton */}
-                <div className="col-5">
-                    <TodoAdd 
-                        handleAddTodo={ handleAddTodo }
+                {/* Clase bootstrap */}
+                <div className="col-5"> 
+                    <TodoAdd //** Agregamos el componente de TodoAdd  */
+                        handleAddTodo={ handleAddTodo } //** Estas son las referencias a la funcion, por consecuencia mi componente de todoAdd va a recibir la funcion ahi, para que pase por el reducer */
                     />
                 </div>
                 
