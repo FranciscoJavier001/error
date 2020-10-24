@@ -10,13 +10,14 @@ export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
         >  
             <p 
                 className={ `${ todo.done && 'complete' }` } //** Aqui hicimos la desestructuracion de archivos, que nos manda la clase del css, donde pusimos si el todo.done &&  */
-                onClick={ () => handleToggle( todo.id ) }
+                onClick={ () => handleToggle( todo.id ) } //** Es un manejador de eventos */
             > 
-                { index + 1}. { todo.desc }   
+            {/* El primer index indica de donde va a empezar y luego el punto es lo que sigue del numero, luego la descripcion del todo*/}
+                { index + 2}. { todo.desc }   
             </p>
             <button
                 className="btn btn-danger"
-                onClick={ () => handleDelete( todo.id ) }
+                onClick={ () => handleDelete( todo.id ) } //** Manejador de eventos cuando haga click en el boton borrar */
             >
                 Borrar
             </button>
