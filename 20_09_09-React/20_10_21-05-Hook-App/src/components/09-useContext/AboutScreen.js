@@ -1,7 +1,9 @@
+//** Revisar la informacion que otras paginas van a trabajar  */
+
 import React, { useContext } from 'react'
 import { UserContext } from './UserContext'
 
-export const AboutScreen = () => {
+export const AboutScreen = () => { //** Este lo eportamos al MainApp.js */
 
     const { user, setUser } = useContext( UserContext );
 
