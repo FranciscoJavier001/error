@@ -13,7 +13,7 @@ export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
                 onClick={ () => handleToggle( todo.id ) } //** Es un manejador de eventos */
             > 
             {/* El primer index indica de donde va a empezar y luego el punto es lo que sigue del numero, luego la descripcion del todo*/}
-                { index + 2}. { todo.desc }   
+                { index + 1}. { todo.desc }   
             </p>
             <button
                 className="btn btn-danger"
