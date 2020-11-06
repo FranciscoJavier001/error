@@ -17,7 +17,7 @@ const init = () => {
 // Esto se importa desde todoReducer, estas son las acciones que viene en el Case
 export const TodoApp = () => {
 
-    const [ todos, dispatch ] = useReducer(todoReducer, [], init); //** El useReducer, maneja el todoReducer que aqui lo importamos, maneja un arreglo con el state actual, y que tiene como estado inicial el init, y los todos que son las acciones actuales y el dispatch, que son las acciones que se generan y se actualizan en el localStorage */
+    const [ todos, dispatch ] = useReducer(todoReducer, [], init); //** El useReducer, maneja el todoReducer que aqui lo importamos, maneja un arreglo con el state actual, y que tiene como estado inicial el init, y los todos que son las acciones actuales y el dispatch, que son las acciones hacia mi reducer /*
 
     // Va a disparar un callback (que es una funcion que recibe como argumento otra funcion y la ejecuta), si los todos cambian eso significa que vamos a volver a ejecutar la funcion del localStorage y eso es lo que hace el useEffect 
     useEffect( ()=> {

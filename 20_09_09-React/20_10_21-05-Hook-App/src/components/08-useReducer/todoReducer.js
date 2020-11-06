@@ -3,7 +3,6 @@
 //** todoReducer tiene una funcion que recibe parametros, el state es el arreglo actual y el action sigue las instrucciones que viene a continuacion en el todoApp */
 export const todoReducer = ( state = [], action ) => { 
 
-
     // Crear las acciones y mandarselas al reducer, el reducer las ejecuta, me regresa un nuevo estado y como estoy trabajando en base a mi useReducer este se va a encargar de redibujar lo que hay que redibujar 
     switch ( action.type ) { /** Wey, esto ya es el boton, con toda la logica para que agrege una nueva tarea */
         case 'add':
@@ -17,7 +16,7 @@ export const todoReducer = ( state = [], action ) => {
 
         case 'toggle':
             return state.map( todo => //** map barre cada uno de los elementos del arreglo que seria el state y debe de retornar un valor, lo que sea que retorne la funcion o el callback de aqui dentro sera el nuevo valor que va a tener cada uno de los elementos de ese state - aqio vo a tener un todo*/
-                ( todo.id === action.payload ) //** action.payload va a venir el id del mismo - si el todo.id es exactamente igual al accion.payload significa que hay que cambiar este elemento  */
+                ( todo.id === action.payload ) //** siemrpre puedo usar el === en el case para ver su son iguales, action.payload va a venir el id del mismo - si el todo.id es exactamente igual al accion.payload significa que hay que cambiar este elemento  */
                     ? { ...todo, done: !todo.done } //** el operador spreed, que me regresa el arreglo como esta actualmente pero el cambio se viene hasta abajo y lo unico que me interesa cambiar es el todo.done la propiedad done va a tener el valor del todo.done pero quiero hacer la negacion para que sean diferentes */
                     : todo //** si son diferentes solamente voy a retornar el todo */
             );
