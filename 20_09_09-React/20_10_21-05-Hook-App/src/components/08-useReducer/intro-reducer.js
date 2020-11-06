@@ -1,33 +1,33 @@
 
-// const initialState = [{ //** Inicializamos el initialState, pero no importa lo que hagamos */
-//     id: 1,
-//     todo: 'Comprar pan',
-//     done: false
-// }];
+const initialState = [{ //** Inicializamos el initialState, pero no importa lo que hagamos */
+    id: 1,
+    tarea: 'Comprar pan',
+    lista: false
+}];
 
-// const todoReducer = ( state = initialState, action ) => { //** Funcion de flecha que recibe el state como primer parametro que esre es igual al initial state */
+const listaTareas = ( state = initialState, action ) => { //** Funcion de flecha que recibe el state como primer parametro que esre es igual al initial state */
     
-//     if ( action?.type === 'agregar' ) {
-//         return [ ...state, action.payload ];
-//     }
+    if ( action?.type === 'agregar' ) { //** El sign de interrogacion nos dice uue si no recibe un parametro no haga nada */
+        return [ ...state, action.payload ];
+    }
 
-//     return state;
-// }
+    return state;
+}
 
-// let todos = todoReducer();
+let tareas = listaTareas();
 
-// const newTodo = {
-//     id: 2,
-//     todo: 'Comprar leche',
-//     done: false
-// }
+const nuevaTarea = {
+    id: 2,
+    tarea: 'Comprar leche',
+    lista: false
+}
 
-// const agregarTodoAction = {
-//     type: 'agregar',
-//     payload: newTodo
-// }
+const agregarNuevaTarea = {
+    type: 'agregar',
+    payload: nuevaTarea
+}
 
-// todos = todoReducer( todos, agregarTodoAction );
+tareas = listaTareas( tareas, agregarNuevaTarea );
 
-// console.log(todos);
+console.log(tareas);
 
