@@ -24,6 +24,7 @@ export const AppRouter = () => { //** Exportamos AppRouter a MainApp.js */
                 <NavBar />
 
                 <div className="container">
+                    {/* El Switch va a renderizar el componente selecciondo del path, por eso el navBar aparece arriba */}
                     <Switch>
                         {/* Ruta a la cual va a entrar y el que va a renderizar se pone en el component*/}
                         <Route exact path="/" component={ HomeScreen } />

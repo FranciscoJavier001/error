@@ -13,6 +13,8 @@ export const Padre = () => {
     // const incrementar = ( num ) => {
     //     setValor( valor + num )
     // }
+
+    //** Para solventar el problema, lo unico que se hizo fue ue creo la funcion incremenentar, que recibe y callback con el valor de numero, y el setValot le asigna el vlor al valor ue tiene, y el uiltimo tiene esa dependencia pero entre llaves */
     const incrementar = useCallback( (num) => {
         setValor( v => v + num )
     }, [ setValor ]);
