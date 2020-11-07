@@ -42,7 +42,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
                 <input //** Este es el campo de texto */
                     type="text"
                     name="description"
-                    className="form-control"
+                    className="form-control" //** Para que use todo el espacio */
                     placeholder="Ingresa alguna Actividad ..."
                     autoComplete="off"
                     value={ description } //** Esto significa que se limpie el input */
