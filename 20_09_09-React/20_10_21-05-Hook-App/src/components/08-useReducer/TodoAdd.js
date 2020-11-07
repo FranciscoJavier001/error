@@ -32,7 +32,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
         // fragment
         <> 
         {/* Titulo */}
-            <h4>Agregar TODO</h4> 
+            <h4>Agregar Tarea</h4> 
             {/* linea */}
             <hr /> 
 
@@ -43,7 +43,7 @@ export const TodoAdd = ({ handleAddTodo }) => {
                     type="text"
                     name="description"
                     className="form-control"
-                    placeholder="Aprender ..."
+                    placeholder="Ingresa alguna Actividad ..."
                     autoComplete="off"
                     value={ description } //** Esto significa que se limpie el input */
                     onChange={ handleInputChange } //** Esto bloquea para que no se pueda escribir en el input  */

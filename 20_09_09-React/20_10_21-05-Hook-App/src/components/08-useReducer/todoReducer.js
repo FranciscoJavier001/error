@@ -4,7 +4,7 @@
 export const todoReducer = ( state = [], action ) => { 
 
     // Crear las acciones y mandarselas al reducer, el reducer las ejecuta, me regresa un nuevo estado y como estoy trabajando en base a mi useReducer este se va a encargar de redibujar lo que hay que redibujar 
-    switch ( action.type ) { /** Wey, esto ya es el boton, con toda la logica para que agrege una nueva tarea */
+    switch ( action.type ) { /** Wey, esto ya es el boton, con toda la logica para que agrege una nueva tarea, porque aqui si me acepta los 3 iguales para comprobar que sea la misma */
         case 'add':
             return [ ...state, action.payload ]; /** Como nos damos cuenta, aqui se va a agregar, y la ltima va a ser la primera, manteniendo la fotografia como estaba antes*/
 
@@ -33,7 +33,7 @@ export const todoReducer = ( state = [], action ) => {
             })
 
         default:
-            return state; /** Si vemos que no hay cambio manda el mismo estado */
+            return state; /** Siempre hay que inicializarlo en el state */
     }
 
 
