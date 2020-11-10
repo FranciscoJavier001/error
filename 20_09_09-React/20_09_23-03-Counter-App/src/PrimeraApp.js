@@ -2,7 +2,7 @@
 //** Hay dos tipos de componentes, los que estan basados en clases y los que estan basados en funciones (estas se llaman Functional Component) */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; //** Las Props son las propiedades que el padre manda al hijo */
 // import React, { Fragment } from 'react';
 
 const PrimeraApp = ({saludo, subtitulo}) => { //** Functional Components es una funcion */
@@ -17,11 +17,11 @@ const PrimeraApp = ({saludo, subtitulo}) => { //** Functional Components es una 
 }
 
 PrimeraApp.propTypes = {
-    saludo: PropTypes.string.isRequired
+    saludo: PropTypes.string.isRequired //** Asi forzamos a recibir el props de PrimeraApp */
 }
 
 PrimeraApp.defaultProps = {
-    subtitulo: 'Soy un subtitulo'
+    subtitulo: 'Soy un subtitulo' //** AQui directamente lo usamos desde aqui */
 }
 
 export default PrimeraApp; //** Aqui se exporta para poderla utilizar */
