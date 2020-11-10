@@ -1,13 +1,16 @@
+//** Los componentes se escriben con el UpperCamelCase */
+//** Hay dos tipos de componentes, los que estan basados en clases y los que estan basados en funciones (estas se llaman Functional Component) */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 // import React, { Fragment } from 'react';
 
-const PrimeraApp = ({saludo, subtitulo}) => {
+const PrimeraApp = ({saludo, subtitulo}) => { //** Functional Components es una funcion */
 
-    return (
-        <>
+    return ( //** Como se renderiza a traves de babel es necesario poner el retorno de esta manera para que me regrese algo y despues el fragment (llamado high order component) */
+        <> 
         <h1>{saludo}!!!</h1>
-            {/* <pre>{JSON.stringify(saludo, null, 3)}</pre> */}
+            {/* <pre>{JSON.stringify(saludo, null, 3)}</pre> */} {/***Si queremos imprimir un arreglo de un objeto esta es la manera de hacerlo */}
             <p>{ subtitulo }</p>
         </>
     );
@@ -21,4 +24,4 @@ PrimeraApp.defaultProps = {
     subtitulo: 'Soy un subtitulo'
 }
 
-export default PrimeraApp;
+export default PrimeraApp; //** Aqui se exporta para poderla utilizar */
