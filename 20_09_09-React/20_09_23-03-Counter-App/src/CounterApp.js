@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, {useState} from 'react'; //** Simplemente desestructuramos el useState que pone ese nombre nomas por mamon, pero lo inicializamos en 10 en el index */
+import PropTypes from 'prop-types'; //** Los Props */
 
-const CounterApp = ({value = 10}) => {
+const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de la App */
 
-    const [counter, setCounter] = useState(value); // []
+    const [counter, setCounter] = useState(value); // [] //** Creamos las props que se va a recibir */
     
 
-    // handleAdd
-    const handleApp=(e)=>{
+    // handleAdd Creamos los componentes que va a llevar nuestra app
+    const handleApp=(e)=>{ 
         // setCounter(counter + 1)
         setCounter((c)=> c+1);
     }
@@ -22,20 +22,20 @@ const CounterApp = ({value = 10}) => {
         setCounter((c)=> c-1);
     }
 
-    return (
-        <>
-        <h1>CounterApp</h1>
-        <h2>{counter}</h2>
+    return ( //** Aqui hacemos el return que ocupa a huevo babel */
+        <>  {/** El Fragment */}
+        <h1>CounterApp</h1> {/** Nombre */}
+        <h2>{counter}</h2> {/** Desestructurado el Counter */}
 
-        <button onClick={handleApp}>+1</button>
+        <button onClick={handleApp}>+1</button> {/** Los Botones */}
         <button onClick={handleAppReset}>Reset</button>
         <button onClick={handleAppMin}>-1</button>
         </>
     );
 }
 
-CounterApp.propTypes = {
-    value: PropTypes.number
+CounterApp.propTypes = { //** Asi obligamos a recibir el parametro de value  */
+    value: PropTypes.number.isRequired
 }
 
-export default CounterApp;
+export default CounterApp; //** Lo exportamos para que se muestre */
