@@ -7,5 +7,5 @@ import './index.css'
 
 const divRoot = document.querySelector('#app');
 
-ReactDOM.render(<PrimeraApp saludo="Hola, Soy Francisco"/>, divRoot); //** Al dejarla con el /> queda claro que es un functional component */
+ReactDOM.render(<PrimeraApp saludo="Hola, Soy Francisco"/>, divRoot); //** Al dejarla con el /> queda claro que es un functional component y este es el prop*/
 // ReactDOM.render(<CounterApp value={10} />, divRoot);
