@@ -7,11 +7,10 @@ const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de l
 
     const [counter, setCounter] = useState(value); // [] //** Creamos las props que se va a recibir */
     
-
     // handleAdd Creamos los componentes que va a llevar nuestra app
-    const handleApp=(e)=>{ 
+    const handleApp=(e)=>{ //** El Primer argumento es enviado como primer argumento a una funcion qu eesta adentro, por ejemplo, el 'e' significa event */
         // setCounter(counter + 1)
-        setCounter((c)=> c+1);
+        setCounter((c)=> c+1); //** El Primer argumento es enviado a una funcion que esta adentro en este caso la 'c' es de conter */
     }
 
     const handleAppReset=(e)=>{
@@ -29,7 +28,7 @@ const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de l
         <h1>CounterApp</h1> {/** Nombre */}
         <h2>{counter}</h2> {/** Desestructurado el Counter */}
 
-        <button onClick={handleApp}>+1</button> {/** Los Botones */}
+        <button onClick={handleApp}>+1</button> {/** Los Botones no los llames inmediatamente sino hasta que les den click */}
         <button onClick={handleAppReset}>Reset</button>
         <button onClick={handleAppMin}>-1</button>
         </>
