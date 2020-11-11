@@ -1,11 +1,11 @@
 //** Para crearlo hay que utilizar rafcp */
 
-import React, {useState} from 'react'; //** Simplemente desestructuramos el useState que pone ese nombre nomas por mamon, pero lo inicializamos en 10 en el index */
+import React, {useState} from 'react'; //** Simplemente desestructuramos el useState ese nombre lo pone porque son hooks, pero lo inicializamos en 10 en el index */
 import PropTypes from 'prop-types'; //** Los Props */
 
-const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de la App */
+const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de la App y le asignamos un valor al useState que va a mandar el valor inicial */
 
-    const [counter, setCounter] = useState(value); // [] //** Creamos las props que se va a recibir */
+    const [counter, setCounter] = useState(value); // [] //** Este es un hook, primer es el nombre de la variable que va a tener el State, la segunda es la forma para establecer ese valor, luego se manda el valor inicial */
     
     // handleAdd Creamos los componentes que va a llevar nuestra app
     const handleApp=(e)=>{ //** El Primer argumento es enviado como primer argumento a una funcion qu eesta adentro, por ejemplo, el 'e' significa event */
@@ -19,8 +19,8 @@ const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de l
     }
 
     const handleAppMin=(e)=>{
-        // setCounter(counter + 1)
-        setCounter((c)=> c-1);
+        // setCounter(counter + 1) //** Son lo mismo */
+        setCounter((c)=> c-1); //** Son lo mismo */
     }
 
     return ( //** Aqui hacemos el return que ocupa a huevo babel */
