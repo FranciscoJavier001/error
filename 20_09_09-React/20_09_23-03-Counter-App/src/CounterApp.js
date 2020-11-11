@@ -3,7 +3,7 @@
 import React, {useState} from 'react'; //** Simplemente desestructuramos el useState ese nombre lo pone porque son hooks, pero lo inicializamos en 10 en el index */
 import PropTypes from 'prop-types'; //** Los Props */
 
-const CounterApp = ({value = 10}) => { //** Creamos el Functional Component de la App y le asignamos un valor al useState que va a mandar el valor inicial */
+const CounterApp = ({value}) => { //** Creamos un Props de la App y le asignamos un valor al useState que va a mandar el valor inicial */
 
     const [counter, setCounter] = useState(value); // [] //** Este es un hook, primer es el nombre de la variable que va a tener el State, la segunda es la forma para establecer ese valor, luego se manda el valor inicial */
     
