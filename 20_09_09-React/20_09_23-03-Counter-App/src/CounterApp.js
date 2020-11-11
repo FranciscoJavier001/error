@@ -1,3 +1,5 @@
+//** Para crearlo hay que utilizar rafcp */
+
 import React, {useState} from 'react'; //** Simplemente desestructuramos el useState que pone ese nombre nomas por mamon, pero lo inicializamos en 10 en el index */
 import PropTypes from 'prop-types'; //** Los Props */
 
