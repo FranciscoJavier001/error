@@ -35,7 +35,7 @@ const CounterApp = ({value = 10}) => { //** Creamos un Props de la App y le asig
     );
 }
 
-CounterApp.propTypes = { //** Asi obligamos a recibir el parametro de value  */
+CounterApp.propTypes = { //** Asi obligamos a recibir el parametro de value */
     value: PropTypes.number
 }
 

@@ -37,12 +37,12 @@ describe('Pruebas en <CounterApp />', () => {
     });
 
     test('debe de colocar el valor por defecto con el btn reset ', () => {
-        const wrapper = shallow(<CounterApp value={105}/>);
+        const wrapper = shallow(<CounterApp value={105}/>); //** El Counter cambia al valor que nosotros queramos */
 
-        // wrapper.find('button').at(0).simulate('click');
-        // wrapper.find('button').at(0).simulate('click');
+        wrapper.find('button').at(0).simulate('click');
+        wrapper.find('button').at(0).simulate('click');
         wrapper.find('button').at(1).simulate('click');
-        const counterText = wrapper.find('h2').text().trim();
+        const counterText = wrapper.find('h2').text().trim(); //** Aqui borramos estos */
         console.log(counterText);
         expect(counterText).toBe('105');
     });
