@@ -11,3 +11,4 @@ export function getSaludo(nombre = 'Carlos'){ //** Aqui esta recibiendo el nombr
 }
 
 // console.log(`Este es un texto: ${getSaludo(nombre)}`);
+
