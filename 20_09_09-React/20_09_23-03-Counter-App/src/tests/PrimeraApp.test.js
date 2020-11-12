@@ -14,8 +14,8 @@ describe('Pruebas en <PrimeraApp />', () => {
     
     test('debe de mostrar <PrimeraApp />> correctamente', () => {
 
-        const saludo = 'Hola, Soy Francisco';
-        const wrapper = shallow(<PrimeraApp saludo={saludo}/>);
+        const saludo = 'Hola, Soy Francisco'; 
+        const wrapper = shallow(<PrimeraApp saludo={saludo}/>); //** Es como el Render, para simular clicks y demas cosas como si fuera el querySelector */
 
        expect(wrapper).toMatchSnapshot();
     });
@@ -31,9 +31,9 @@ describe('Pruebas en <PrimeraApp />', () => {
         />
         );
 
-        const textoParrafo = wrapper.find('p').text();
+        const textoParrafo = wrapper.find('p').text(); //** Wrapper tiene toda la informacion del componente renderizado, lo barre con el .find (se parece al querysEelector), luego le dice a donde apunte, por ejemplo, aqui apunta al parrafo "p", luego queremos ver la indo del texto */
         
-        expect(textoParrafo).toBe(subTitulo);
+        expect(textoParrafo).toBe(subTitulo); //** Aqui decimos que textoParrafo tiene que ser un subtitulo */
     });
     
 })

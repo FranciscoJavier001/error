@@ -12,3 +12,7 @@ exports[`Pruebas en <PrimeraApp /> debe de mostrar <PrimeraApp />> correctamente
   </p>
 </Fragment>
 `;
+
+exports[`Pruebas en <PrimeraApp /> debe de mostrar el subtitulo enviado por props : Soy un subtitulo 1`] = `"Soy un subtitulo"`;
+
+exports[`Pruebas en <PrimeraApp /> debe de mostrar el subtitulo enviado por props : Soy un subtitulsadbasjhbo 1`] = `"Soy un subtitulsadbasjhbo"`;
