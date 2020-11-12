@@ -2,9 +2,9 @@ import  { getHeroeById } from '../base/08-imp-exp';
 
 export const getHeroeByIdAsync = (id) => {
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => { //** Nueva promesa */
 
-        setTimeout(() => {
+        setTimeout(() => {  //** Solo pedimos que nos resuleva si se puede encontrar un heroe */
             // Tarea
             // importen el
             const p1 = getHeroeById(id);
@@ -13,6 +13,6 @@ export const getHeroeByIdAsync = (id) => {
             } else {
                 reject('No se pudo encontrar el heroe')
             }
-        }, 500)
+        }, 50)
     });
 }
