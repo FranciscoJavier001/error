@@ -6,6 +6,7 @@ exports[`Pruebas en <PrimeraApp /> debe de mostrar <PrimeraApp />> correctamente
     Hola, Soy Francisco
     !!!
   </h1>
+   
   <p>
     Soy un subtitulo
   </p>

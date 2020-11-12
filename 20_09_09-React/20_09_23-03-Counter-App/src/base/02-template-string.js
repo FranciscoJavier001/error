@@ -6,7 +6,7 @@ const nombreCompleto = `${nombre} ${apellido}`;
 
 // console.log(nombreCompleto);
 
-export function getSaludo(nombre = 'Carlos'){
+export function getSaludo(nombre = 'Carlos'){ //** Aqui esta recibiendo el nombre de carlos porque se lo estamos pasando como parametro a la funcion */
     return 'Hola ' + nombre + '!';
 }
 
