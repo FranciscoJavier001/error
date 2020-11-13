@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
 
 export const GifGridItem = ({title, url}) => {
 
@@ -10,17 +9,3 @@ export const GifGridItem = ({title, url}) => {
         </div>
     )
 }
-
-GifGridItem.propTypes = {
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-}
-
-/** 
- * 1. Enzyme
- * 2. Enzyme to JSON
- * 3. Debe de mostrar el componente correctamente
- * shallow
- * wrapper
- * wrapper .toMatchSnapshot
- */
