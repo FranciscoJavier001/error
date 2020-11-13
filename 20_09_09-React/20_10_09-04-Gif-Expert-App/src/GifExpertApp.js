@@ -4,7 +4,7 @@ import { GifGrid } from './components/GifGrid'
 
 export const GifExpertApp = () => {
 
-    const [categories, setcategories] = useState(['One Punch'])
+    const [categories, setcategories] = useState(['Death Note'])
 
     //     setcategories(cats => [...cats, 'HunterXHunter']); /** El UseState me dio la habilidad de hacerlo directamente con el setcategories */
 
